@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>План HSK4 · Планер подготовки</title>
+<style>
+  :root{
+    --bg:#0f1117;
+    --card:#171b26;
+    --card2:#1d2233;
+    --line:#2a3042;
+    --text:#e8eaf0;
+    --muted:#9aa2b5;
+    --accent:#f0b429;
+    --accent2:#e8543f;
+    --green:#3ecf8e;
+    --blue:#4aa8ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:linear-gradient(160deg,#0f1117 0%,#141826 100%);
+    color:var(--text);
+    line-height:1.6;
+    padding:32px 20px;
+    min-height:100vh;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  header.hero{
+    text-align:center;
+    padding:34px 20px 26px;
+    margin-bottom:26px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background:radial-gradient(500px 200px at 50% -30%,rgba(240,180,41,.18),transparent 70%);
+    pointer-events:none;
+  }
+  .tag{
+    display:inline-block;
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:10px;
+  }
+  h1{font-size:30px;font-weight:800;letter-spacing:.3px}
+  h1 span{color:var(--accent)}
+  .sub{color:var(--muted);margin-top:8px;font-size:15px}
+  .stats{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:20px;
+  }
+  .stat{
+    background:var(--card2);border:1px solid var(--line);border-radius:12px;
+    padding:12px 18px;min-width:130px;
+  }
+  .stat b{display:block;font-size:22px;color:var(--accent)}
+  .stat span{font-size:12px;color:var(--muted)}
+  .legend{
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    margin:16px 0 6px;font-size:12px;
+  }
+  .lbl{display:inline-flex;align-items:center;gap:6px;color:var(--muted)}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  section{margin-bottom:26px}
+  h2{
+    font-size:20px;font-weight:800;margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  h2 .num{
+    background:var(--accent);color:#16181f;font-size:13px;
+    width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-weight:800;
+  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+  }
+  .card h3{font-size:15px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline}
+  .card h3 small{color:var(--muted);font-weight:400;font-size:12px}
+  .card p{color:var(--muted);font-size:13px;margin-bottom:10px}
+  .chip{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700}
+  .chip.word{background:rgba(240,180,41,.15);color:var(--accent)}
+  .chip.gram{background:rgba(74,168,255,.15);color:var(--blue)}
+  .chip.aud{background:rgba(62,207,142,.15);color:var(--green)}
+  .chip.test{background:rgba(232,84,63,.15);color:var(--accent2)}
+  ul{list-style:none;margin-top:8px}
+  li{font-size:13px;color:var(--muted);padding:3px 0 3px 16px;position:relative}
+  li::before{content:"›";position:absolute;left:2px;color:var(--accent);font-weight:700}
+  .vocab{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{
+    text-align:left;color:var(--text);font-weight:700;
+    padding:9px 10px;border-bottom:2px solid var(--accent);
+    background:var(--card2);white-space:nowrap;
+  }
+  tbody td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
+  tbody tr:hover{background:var(--card2)}
+  tbody td.wk{color:var(--accent);font-weight:700;white-space:nowrap}
+  td b{color:var(--text)}
+  .check{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 4px}
+  .item{
+    display:flex;align-items:flex-start;gap:10px;padding:9px 12px;border-radius:10px;cursor:pointer;
+    transition:background .15s;
+  }
+  .item:hover{background:var(--card2)}
+  .item input{margin-top:4px;accent-color:var(--green);width:16px;height:16px;flex-shrink:0}
+  .item label{font-size:14px;cursor:pointer;flex:1}
+  .item.done label{text-decoration:line-through;color:var(--muted)}
+  .progress{
+    height:10px;background:var(--card2);border-radius:20px;overflow:hidden;margin:10px 16px 6px;
+  }
+  .progress div{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:width .3s}
+  .note{
+    background:rgba(240,180,41,.07);border:1px solid rgba(240,180,41,.3);
+    border-radius:12px;padding:14px 16px;font-size:13px;color:var(--muted);margin-top:14px;
+  }
+  .note b{color:var(--accent)}
+  .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+  @media(max-width:560px){
+    h1{font-size:24px}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="tag">Планер подготовки</div>
+    <h1>Путь к <span>HSK4</span></h1>
+    <div class="sub">База HSK1–2 → цель 1200 слов к концу декабря 2026</div>
+    <div class="stats">
+      <div class="stat"><b>~3 мес</b><span>октябрь–декабрь</span></div>
+      <div class="stat"><b>1200</b><span>слов к финишу</span></div>
+      <div class="stat"><b>~900</b><span>новых слов набрать</span></div>
+      <div class="stat"><b>≥180</b><span>проходной / 300</span></div>
+    </div>
+    <div class="legend">
+      <span class="lbl"><span class="dot" style="background:var(--accent)"></span>словарь</span>
+      <span class="lbl"><span class="dot" style="background:var(--blue)"></span>грамматика</span>
+      <span class="lbl"><span class="dot" style="background:var(--green)"></span>аудирование</span>
+      <span class="lbl"><span class="dot" style="background:var(--accent2)"></span>пробники/письмо</span>
+    </div>
+  </header>
+
+  <!-- ============ НЕДЕЛИ ============ -->
+  <section>
+    <h2><span class="num">1</span> Помесячные этапы</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Мес. 1 · Октябрь <small>закрываем HSK3</small></h3>
+        <p>Довести словарь до ~600, разобрать грамматику HSK3.</p>
+        <span class="chip word">+300 слов</span> <span class="chip gram">грамматика HSK3</span><br><br>
+        <ul>
+          <li>Список HSK3 (≈300 над базой HSK2)</li>
+          <li>了,过, 得/地, 一…就…, 一边…一边…, 把 (начало)</li>
+          <li>Аудио HSK3 · 2–3 диктанта/нед.</li>
+          <li>Пробный HSK3 в конце · цель ≥180</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Мес. 2 · Ноябрь <small>ядро HSK4</small></h3>
+        <p>Освоить слова 600→900 и ключевую грамматику HSK4.</p>
+        <span class="chip word">+300 слов</span> <span class="chip gram">грамматика HSK4</span><br><br>
+        <ul>
+          <li>Словарь HSK4 — первый блок</li>
+          <li>被-пассив, 把 (углубл.), 不但…而且…, 虽然…但是…, 越来越…</li>
+          <li>Аудио и чтение HSK4</li>
+          <li>Письмо: предложения по картинке</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Мес. 3 · Декабрь <small>шлифовка</small></h3>
+        <p>Добить словарь 900→1200, отточить формат экзамена.</p>
+        <span class="chip word">+300 слов</span> <span class="chip test">пробники</span><br><br>
+        <ul>
+          <li>Финиш словаря HSK4</li>
+          <li>3–4 полных пробных экзамена на время</li>
+          <li>Письмо по картинке ежедневно (25 мин)</li>
+          <li>Целевой балл ≥200 (запас над 180)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ СЛОВА ПО НЕДЕЛЯМ ============ -->
+  <section>
+    <h2><span class="num">2</span> Словарный план по неделям</h2>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:10px">
+      Итого ~900 новых слов за 13 недель: нужно <b style="color:var(--text)">~70 слов/неделю</b> (≈10–12 слов/день). Это
+      сами слова HSK4 + добор слов уровня HSK3, которого не хватает от базы HSK1–2.
+    </p>
+    <div class="vocab">
+      <table>
+        <thead>
+          <tr><th>Неделя</th><th>Блок</th><th>Новых слов</th><th>Фокус недели</th><th>Накопительный итог</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="wk">1</td><td>HSK3 · базовые слова</td><td>60</td><td>быт, числа, время, место</td><td>360</td></tr>
+          <tr><td class="wk">2</td><td>HSK3 · действия и глаголы</td><td>60</td><td>движение, начало HSK4-глаголов</td><td>420</td></tr>
+          <tr><td class="wk">3</td><td>HSK3 · прилагат. и наречия</td><td>60</td><td>описание, оценка, связи</td><td>480</td></tr>
+          <tr><td class="wk">4</td><td>HSK3 · служебн. + пробный HSK3</td><td>60</td><td>предлог, союз, замер уровня</td><td>540</td></tr>
+          <tr><td class="wk">5</td><td>HSK3 · финал</td><td>60</td><td>добить остаток, <b>цель 600 ✓</b></td><td>600</td></tr>
+          <tr><td class="wk">6</td><td>HSK4 · старт</td><td>80</td><td>учёба, работа, повседневность</td><td>680</td></tr>
+          <tr><td class="wk">7</td><td>HSK4 · глаголы</td><td>80</td><td>действия, процессы, состояния</td><td>760</td></tr>
+          <tr><td class="wk">8</td><td>HSK4 · прилагательные</td><td>80</td><td>эмоции, качества, оценка</td><td>840</td></tr>
+          <tr><td class="wk">9</td><td>HSK4 · природа/общество</td><td>80</td><td>погода, здоровье, город, транспорт</td><td>920</td></tr>
+          <tr><td class="wk">10</td><td>HSK4 · абстрактное</td><td>80</td><td>мышление, связь, причина–следствие</td><td>1000</td></tr>
+          <tr><td class="wk">11</td><td>HSK4 · служебные</td><td>70</td><td>предлоги, наречия, связки</td><td>1070</td></tr>
+          <tr><td class="wk">12</td><td>HSK4 · финал 1</td><td>70</td><td>добить остаток HSK4</td><td>1140</td></tr>
+          <tr><td class="wk">13</td><td>HSK4 · финал 2 + экзамен</td><td>60</td><td>повтор, пробники, сдача</td><td><b>1200 ✓</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <b>Совет:</b> приложение Anki с готовой колодой HSK4 + карточки в Pleco/HelloChinese. Повторение старого занимает столько же времени, сколько и новые слова — закладывайте 10–15 мин ежедневно только на повторение.
+    </div>
+  </section>
+
+  <!-- ============ ГРАММАТИКА ============ -->
+  <section>
+    <h2><span class="num">3</span> Грамматика HSK4 (ключевые конструкции)</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Пассив и направленность</h3>
+        <ul>
+          <li><b>被</b> — пассивный залог</li>
+          <li><b>把</b> — конструкция (углубление)</li>
+          <li><b>使 / 让</b> — «заставлять, позволять»</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Связки и отношения</h3>
+        <ul>
+          <li><b>不但…而且…</b> — не только… но и…</li>
+          <li><b>虽然…但是…</b> — хотя… но…</li>
+          <li><b>因为…所以…</b> — потому что… поэтому…</li>
+          <li><b>为了…</b> — для того чтобы…</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Изменение и сравнение</h3>
+        <ul>
+          <li><b>越来越…</b> — всё более…</li>
+          <li><b>跟…一样</b> — так же как…</li>
+          <li><b>比…(得多)</b> — чем… (намного)</li>
+          <li><b>一边…一边…</b> — одновременно</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Модальность и время</h3>
+        <ul>
+          <li><b>可能/应该/必须</b> — модальные</li>
+          <li><b>...的时候</b> — когда…</li>
+          <li><b>...以前/以后</b> — до/после</li>
+          <li><b>...得</b> — степень/результат</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ЧЕК-ЛИСТ ============ -->
+  <section>
+    <h2><span class="num">4</span> Еженедельный чек-лист</h2>
+    <div class="check" id="checklist">
+      <div class="progress"><div id="bar"></div></div>
+      <!-- items injected -->
+    </div>
+    <div class="note">
+      Отмечайте выполненные пункты — прогресс-бар обновится автоматически. Порядок отражает недельный ритм (~1.5–2 ч/день, 6 дней в неделю).
+    </div>
+  </section>
+
+  <!-- ============ РИСКИ ============ -->
+  <section>
+    <h2><span class="num">5</span> Если что-то идёт не так</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Слова «не лезут»</h3>
+        <p>Снизьте темп до 6–8 слов/день, но не бросайте ежедневность. Лучше чуть позже прийти к цели, чем выгореть.</p>
+      </div>
+      <div class="card">
+        <h3>Слабое письмо</h3>
+        <p>Заложите +20 мин/день на секцию «Письмо», учите шаблонные фразы, составьте по картинке 5–6 предложений формата HSK4.</p>
+      </div>
+      <div class="card">
+        <h3>«Плывёт» аудирование</h3>
+        <p>Слушайте один трек 2–3 раза, затем читайте транскрипт. Переходите на HSK4 постепенно.</p>
+      </div>
+      <div class="card">
+        <h3>Не набираете 180 за месяц до экзамена</h3>
+        <p>Не паникуйте: у вас уже будет HSK3 (по декабрьскому плану). HSK4 можно досдать весной и допослать вузам — это не рушит поступление.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    Планер HSK4 · база HSK1–2 → 1200 слов к декабрю 2026 · Действует совместно с основным планом поступления
+  </div>
+</div>
+
+<script>
+  const items = [
+    "Словарь: 8–10 новых слов + повторение старых",
+    "Грамматика: 1–2 темы с собственными примерами",
+    "Аудирование: трек HSK + разбор непонятого (2–3 раза)",
+    "Чтение: 1–2 текста уровня HSK4",
+    "Письмо: предложения на новую грамматику / по картинке",
+    "Карточки Anki/Pleco — ежедневное повторение",
+    "1–2 пробных задания в неделю к концу месяца",
+    "Полный пробный экзамен в конце месяца (замер прогресса)"
+  ];
+  const box = document.getElementById('checklist');
+  items.forEach((t, i) => {
+    const d = document.createElement('div');
+    d.className = 'item';
+    d.innerHTML = '<input type="checkbox" id="c'+i+'"><label for="c'+i+'">'+t+'</label>';
+    const ch = d.querySelector('input');
+    let saved = localStorage.getItem('hsk4_'+i) === '1';
+    ch.checked = saved;
+    if(saved) d.classList.add('done');
+    ch.addEventListener('change', () => {
+      d.classList.toggle('done', ch.checked);
+      localStorage.setItem('hsk4_'+i, ch.checked ? '1' : '0');
+      update();
+    });
+    box.insertBefore(d, box.lastElementChild);
+  });
+  function update(){
+    const all = document.querySelectorAll('#checklist .item');
+    const done = document.querySelectorAll('#checklist .item.done');
+    const pct = all.length ? Math.round(done.length / all.length * 100) : 0;
+    document.getElementById('bar').style.width = pct + '%';
+  }
+  update();
+</script>
+</body>
+</html>
