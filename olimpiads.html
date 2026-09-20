@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Олимпиады для поступления на ИИ-направления (2026/27)</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #7c3aed;
+      --green: #16a34a;
+      --yellow: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    }
+    header h1 { font-size: 28px; margin-bottom: 8px; }
+    header p { opacity: 0.9; font-size: 16px; }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 4px 12px;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    h2 { font-size: 22px; margin-bottom: 16px; color: var(--primary-dark); }
+    .summary {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .summary h3 { font-size: 16px; margin-bottom: 8px; color: var(--muted); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      vertical-align: top;
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    tr:hover td { background: #f1f5f9; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      transition: transform 0.15s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .card h3 { font-size: 18px; color: var(--primary-dark); margin-bottom: 8px; }
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: var(--primary-dark);
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    .card p { font-size: 14px; color: var(--text); margin-bottom: 6px; }
+    .card .label { font-weight: 600; color: var(--muted); }
+    .uni-tags { margin-top: 8px; }
+    .uni-tag {
+      display: inline-block;
+      background: #f0fdf4;
+      color: var(--green);
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin: 2px;
+    }
+    .bvi { color: var(--green); font-weight: 600; }
+    .card strong.rel { color: var(--accent); }
+    footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 768px) {
+      body { padding: 12px; }
+      header { padding: 24px; }
+      .cards { grid-template-columns: 1fr; }
+      table { font-size: 13px; }
+      th, td { padding: 10px 12px; }
+      .table-wrap { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏆 Олимпиады школьников для поступления на ИИ-направления</h1>
+      <p>Результаты олимпиад, учитываемые вузами при приёме на бакалавриат по направлению «Искусственный интеллект» (цикл 2026/27)</p>
+      <span class="badge">Дата: 20 сентября 2026 · 14 олимпиад · 12 вузов</span>
+    </header>
+
+    <section class="summary">
+      <h3>Условные обозначения льгот</h3>
+      <p><span class="bvi">БВИ</span> — поступление без вступительных испытаний; <strong>100</strong> — 100 баллов за ЕГЭ по профильному предмету; <strong>ДВИ</strong> — учёт при дополнительном вступительном испытании. Указанные соответствия приведены по данным цикла 2025/26 и предварительным данным 2026/27; финальный перечень каждый вуз публикует в «Правилах приёма» к 1 ноября.</p>
+    </section>
+
+    <h2>Сводная таблица</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Олимпиада</th>
+          <th>Профиль</th>
+          <th>Предстоящие этапы (2026/27)</th>
+          <th>Кто учитывает</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>ВсОШ по информатике</td><td>информатика</td><td>регион. янв–фев 2027; заключ. мар–апр 2027</td><td>все 12 вузов (БВИ)</td></tr>
+        <tr><td>2</td><td>ВсОШ по математике</td><td>математика</td><td>регион. янв–фев 2027; заключ. мар–апр 2027</td><td>все 12 вузов (БВИ)</td></tr>
+        <tr><td>3</td><td>«Физтех» (МФТИ)</td><td>математика / физика</td><td>отб. окт–дек 2026; закл. фев–мар 2027</td><td>МФТИ, НИЯУ МИФИ, СарФТИ, МГТУ, СПбПУ, ТГУ</td></tr>
+        <tr><td>4</td><td>«Физтех» по информатике</td><td>информатика</td><td>отб. зима 2026/27; закл. фев 2027</td><td>МФТИ, НИЯУ МИФИ, СарФТИ</td></tr>
+        <tr><td>5</td><td>«ТехноКубок» (МФТИ/VK)</td><td>информатика / программирование</td><td>отб. окт–дек 2026; закл. янв–фев 2027</td><td>МФТИ, НИЯУ МИФИ, СарФТИ, НИУ ВШЭ, МГТУ</td></tr>
+        <tr><td>6</td><td>«Высшая проба» (НИУ ВШЭ)</td><td>информатика, математика, пром. программирование, анализ данных</td><td>отб. ноя–дек 2026; закл. фев 2027</td><td>НИУ ВШЭ, МФТИ, ИТМО, СПбГУ, НГУ, МГТУ, СПбПУ, ТГУ</td></tr>
+        <tr><td>7</td><td>СПб олимпиада школьников (ИТМО)</td><td>информатика, математика</td><td>отб. ноя–дек 2026; закл. мар 2027</td><td>ИТМО, СПбГУ, СПбПУ</td></tr>
+        <tr><td>8</td><td>«Шаг в будущее» (МГТУ)</td><td>информатика, математика, физика</td><td>отб. ноя–дек 2026; закл. фев–мар 2027</td><td>МГТУ, НИЯУ МИФИ, СарФТИ, МФТИ</td></tr>
+        <tr><td>9</td><td>«Прометей» (ТГУ)</td><td>информатика, математика, физика</td><td>осень/зима 2026; закл. весна 2027</td><td>ТГУ</td></tr>
+        <tr><td>10</td><td>Innopolis Open (Иннополис)</td><td>информатика, математика, <strong>ИИ</strong>, робототехника</td><td>отб. окт–янв 2026/27; закл. фев–мар 2027</td><td>Иннополис, ИТМО, МФТИ, НИЯУ МИФИ, НИУ ВШЭ</td></tr>
+        <tr><td>11</td><td>Олимпиада СПбГУ</td><td>математика, информатика</td><td>отб. окт–янв 2026/27; закл. мар 2027</td><td>СПбГУ, ИТМО, СПбПУ, НИУ ВШЭ</td></tr>
+        <tr><td>12</td><td>«РОБОФЕСТ»</td><td>робототехника, программирование</td><td>отб. осень 2026; финал фев–мар 2027</td><td>МГТУ, НГУ, ТГУ</td></tr>
+        <tr><td>13</td><td>Всероссийская олимпиада по ИИ (для школьников)</td><td>ИИ / информатика</td><td>отб. 21.09–06.10.2026; закл. 16–21.11.2026</td><td>МФТИ, НИУ ВШЭ, ИТМО, МГУ, НИЯУ МИФИ/СарФТИ, СПбГУ, СПбПУ, Иннополис, НГУ</td></tr>
+        <tr><td>14</td><td>НТО «Искусственный интеллект»</td><td>ИИ / программирование</td><td>отб. окт–дек 2026; финал фев–мар 2027</td><td>МФТИ, НИУ ВШЭ, ИТМО, МГУ, НГУ, СПбПУ, Иннополис, ТГУ, СПбГУ, МГТУ, НИЯУ МИФИ</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Подробно об олимпиадах</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">ВсОШ · государственная</span>
+        <h3>Всероссийская олимпиада школьников (информатика / математика)</h3>
+        <p><span class="label">Организатор:</span> Минпросвещения России</p>
+        <p><span class="label">Сроки:</span> региональный этап — янв–фев 2027; заключительный — мар–апр 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span> по профильному предмету</p>
+        <div class="uni-tags"><span class="uni-tag">Все 12 вузов</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">МФТИ · матем./физ.</span>
+        <h3>Олимпиада «Физтех»</h3>
+        <p><span class="label">Организатор:</span> МФТИ</p>
+        <p><span class="label">Сроки:</span> отбор — окт–дек 2026; финал — фев–мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">МФТИ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">СарФТИ</span><span class="uni-tag">МГТУ</span><span class="uni-tag">СПбПУ</span><span class="uni-tag">ТГУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">МФТИ · информ.</span>
+        <h3>Олимпиада «Физтех» по информатике</h3>
+        <p><span class="label">Организатор:</span> МФТИ</p>
+        <p><span class="label">Сроки:</span> отбор — зима 2026/27; финал — фев 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100 по информатике</p>
+        <div class="uni-tags"><span class="uni-tag">МФТИ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">СарФТИ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">МФТИ/VK · информ.</span>
+        <h3>Олимпиада «ТехноКубок»</h3>
+        <p><span class="label">Организатор:</span> МФТИ + VK</p>
+        <p><span class="label">Сроки:</span> отбор — окт–дек 2026; финал — янв–фев 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">МФТИ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">СарФТИ</span><span class="uni-tag">НИУ ВШЭ</span><span class="uni-tag">МГТУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">НИУ ВШЭ · информ./мат.</span>
+        <h3>Олимпиада «Высшая проба»</h3>
+        <p><span class="label">Организатор:</span> НИУ ВШЭ</p>
+        <p><span class="label">Сроки:</span> отбор — ноя–дек 2026; финал — фев 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">НИУ ВШЭ</span><span class="uni-tag">МФТИ</span><span class="uni-tag">ИТМО</span><span class="uni-tag">СПбГУ</span><span class="uni-tag">НГУ</span><span class="uni-tag">МГТУ</span><span class="uni-tag">СПбПУ</span><span class="uni-tag">ТГУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">ИТМО · информ./мат.</span>
+        <h3>Санкт-Петербургская олимпиада школьников</h3>
+        <p><span class="label">Организатор:</span> Университет ИТМО / Комитет по образованию СПб</p>
+        <p><span class="label">Сроки:</span> отбор — ноя–дек 2026; финал — мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">ИТМО</span><span class="uni-tag">СПбГУ</span><span class="uni-tag">СПбПУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">МГТУ · информ./мат.</span>
+        <h3>Всероссийская олимпиада «Шаг в будущее»</h3>
+        <p><span class="label">Организатор:</span> МГТУ им. Н. Э. Баумана</p>
+        <p><span class="label">Сроки:</span> отбор — ноя–дек 2026; финал — фев–мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">МГТУ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">СарФТИ</span><span class="uni-tag">МФТИ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">ТГУ · информ./мат.</span>
+        <h3>Олимпиада «Прометей»</h3>
+        <p><span class="label">Организатор:</span> Томский государственный университет</p>
+        <p><span class="label">Сроки:</span> отбор — осень/зима 2026; финал — весна 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">ТГУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">Иннополис · <strong class="rel">ИИ</strong></span>
+        <h3>Innopolis Open</h3>
+        <p><span class="label">Организатор:</span> Университет Иннополис</p>
+        <p><span class="label">Сроки:</span> отбор — окт–янв 2026/27; финал — фев–мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">Иннополис</span><span class="uni-tag">ИТМО</span><span class="uni-tag">МФТИ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">НИУ ВШЭ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">СПбГУ · мат./информ.</span>
+        <h3>Олимпиада школьников СПбГУ</h3>
+        <p><span class="label">Организатор:</span> СПбГУ</p>
+        <p><span class="label">Сроки:</span> отбор — окт–янв 2026/27; финал — мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">СПбГУ</span><span class="uni-tag">ИТМО</span><span class="uni-tag">СПбПУ</span><span class="uni-tag">НИУ ВШЭ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">РОБОФЕСТ · техно</span>
+        <h3>«РОБОФЕСТ» — Всероссийский технологический фестиваль</h3>
+        <p><span class="label">Организатор:</span> Фонд «Вольное Дело» / Минпросвещения</p>
+        <p><span class="label">Сроки:</span> отбор — осень 2026; финал — фев–мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100</p>
+        <div class="uni-tags"><span class="uni-tag">МГТУ</span><span class="uni-tag">НГУ</span><span class="uni-tag">ТГУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">ИИ · профильная</span>
+        <h3>Всероссийская олимпиада по искусственному интеллекту</h3>
+        <p><span class="label">Организатор:</span> Гос. университет просвещения; партнёры VK, Сбер, МФТИ, НИУ ВШЭ, ИТМО</p>
+        <p><span class="label">Сроки:</span> отбор — 21.09–06.10.2026; финал — 16–21.11.2026</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100 (II уровень перечня РСОШ)</p>
+        <div class="uni-tags"><span class="uni-tag">МФТИ</span><span class="uni-tag">НИУ ВШЭ</span><span class="uni-tag">ИТМО</span><span class="uni-tag">МГУ</span><span class="uni-tag">НИЯУ МИФИ</span><span class="uni-tag">СарФТИ</span><span class="uni-tag">СПбГУ</span><span class="uni-tag">СПбПУ</span><span class="uni-tag">Иннополис</span><span class="uni-tag">НГУ</span></div>
+      </div>
+
+      <div class="card">
+        <span class="tag">НТО · <strong class="rel">ИИ</strong></span>
+        <h3>Национальная технологическая олимпиада — профиль «Искусственный интеллект»</h3>
+        <p><span class="label">Организатор:</span> Кружковое движение НТИ / АНО «Платформа НТИ»</p>
+        <p><span class="label">Сроки:</span> отбор — окт–дек 2026; финал — фев–мар 2027</p>
+        <p><span class="label">Льгота:</span> <span class="bvi">БВИ</span>/100 по информатике</p>
+        <div class="uni-tags"><span class="uni-tag">МФТИ</span><span class="uni-tag">НИУ ВШЭ</span><span class="uni-tag">ИТМО</span><span class="uni-tag">МГУ</span><span class="uni-tag">НГУ</span><span class="uni-tag">СПбПУ</span><span class="uni-tag">Иннополис</span><span class="uni-tag">ТГУ</span><span class="uni-tag">СПбГУ</span><span class="uni-tag">МГТУ</span><span class="uni-tag">НИЯУ МИФИ</span></div>
+      </div>
+    </div>
+
+    <section class="summary" style="margin-top: 32px;">
+      <h3>Важные оговорки</h3>
+      <ul>
+        <li>Официальный Перечень олимпиад школьников на 2026/27 утверждается осенью 2026; конечный список каждый вуз публикует в «Правилах приёма» к 1 ноября.</li>
+        <li>БВИ или 100 баллов зависит от уровня олимпиады (I/II/III) в перечне и программы поступления. Для дипломов 7–10 классов обычно даётся «100 баллов», для 11 класса — БВИ/100.</li>
+        <li>Для программ «ИИ» важен конкретный профиль (как правило, информатика и/или математика) в дипломе.</li>
+      </ul>
+    </section>
+
+    <section class="summary">
+      <h3>Источники для верификации</h3>
+      <p>olimpiada.ru · minobrnauki.gov.ru · mipt.ru/abiturs · olymp.hse.ru · olymp.itmo.ru · cmc.msu.ru · bmstu.ru · mephi.ru · nsu.ru · spbu.ru · innopolis.university · spbstu.ru · tsu.ru</p>
+    </section>
+
+    <footer>Сформировано автоматически · Календарь олимпиадного сезона 2026/27 · 20 сентября 2026</footer>
+  </div>
+</body>
+</html>
